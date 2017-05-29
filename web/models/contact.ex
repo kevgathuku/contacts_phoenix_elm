@@ -1,6 +1,13 @@
 defmodule ContactsPhoenixElm.Contact do
   use ContactsPhoenixElm.Web, :model
 
+  @genders [
+    {0, :male},
+    {1, :female}
+  ]
+
+  @derive {Poison.Encoder, except: [:__meta__, :inserted_at, :updated_at]}
+
   schema "contacts" do
     field :first_name, :string
     field :last_name, :string
@@ -23,4 +30,9 @@ defmodule ContactsPhoenixElm.Contact do
     |> cast(params, [:first_name, :last_name, :gender, :birth_date, :location, :phone_number, :email, :headline, :picture])
     |> validate_required([:first_name, :last_name, :gender, :birth_date, :location, :phone_number, :email, :headline, :picture])
   end
+
+  @doc """
+  Returns genders options
+  """
+  def genders, do: @genders
 end
