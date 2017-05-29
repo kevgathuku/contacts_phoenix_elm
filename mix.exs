@@ -19,7 +19,7 @@ defmodule ContactsPhoenixElm.Mixfile do
   def application do
     [mod: {ContactsPhoenixElm, []},
      applications: [:phoenix, :phoenix_pubsub, :phoenix_html, :cowboy, :logger, :gettext,
-                    :phoenix_ecto, :postgrex, :scrivener_ecto]]
+                    :phoenix_ecto, :postgrex, :faker, :scrivener_ecto]]
   end
 
   # Specifies which paths to compile per environment.
@@ -38,6 +38,7 @@ defmodule ContactsPhoenixElm.Mixfile do
      {:phoenix_live_reload, "~> 1.0", only: :dev},
      {:gettext, "~> 0.11"},
      {:cowboy, "~> 1.0"},
+     {:faker, "~> 0.8"},
      {:scrivener_ecto, "~> 1.0"}]
   end
 
