@@ -57,6 +57,9 @@ exports.config = {
       mainModules: ['Main.elm'],
       // relative to web/elm directory
       outputFolder: '../static/js'
+    },
+    stylus: {
+      plugins: ['nib']
     }
   },
 
